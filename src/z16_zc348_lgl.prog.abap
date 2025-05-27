@@ -3,49 +3,49 @@
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-report z16_zc348_lgl.
+REPORT z16_zc348_lgl.
 
-class lcl_cds_me definition.
-  public section.
-    class-methods main.
-endclass.
+CLASS lcl_cds_me DEFINITION.
+  PUBLIC SECTION.
+    CLASS-METHODS main.
+ENDCLASS.
 
-class lcl_cds_me implementation.
+CLASS lcl_cds_me IMPLEMENTATION.
 
-  method main.
+  METHOD main.
 
 
-    data(lo_out) = cl_demo_output=>new(  )->next_section( 'NO Metadata Extension' ).
+    DATA(lo_out) = cl_demo_output=>new(  )->next_section( 'NO Metadata Extension' ).
 
     cl_dd_ddl_annotation_service=>get_annos(
-      exporting
-        entityname         = 'Z26_C315_GVALER'
+      EXPORTING
+        entityname         = 'Z26_ZC348_LGL'
         metadata_extension = abap_false
-      importing
-        element_annos      = data(lt_elements) ).
+      IMPORTING
+        element_annos      = DATA(lt_elements) ).
 
-    delete lt_elements where elementname <> 'CARRID' and
+    DELETE lt_elements WHERE elementname <> 'CARRID' AND
                              elementname <> 'CONNID'.
 
     lo_out->write( lt_elements )->next_section( 'WITH Metadata Extension' ).
 
     cl_dd_ddl_annotation_service=>get_annos(
-      exporting
-        entityname         = 'Z26_C315_GVALER'
+      EXPORTING
+        entityname         = 'Z26_ZC348_LGL'
         metadata_extension = abap_true
-      importing
+      IMPORTING
         element_annos      = lt_elements ).
 
-    delete lt_elements where elementname <> 'CARRID' and
+    DELETE lt_elements WHERE elementname <> 'CARRID' AND
                              elementname <> 'CONNID'.
 
     lo_out->write( lt_elements )->display(  ).
 
 
-  endmethod.
+  ENDMETHOD.
 
-endclass.
+ENDCLASS.
 
-start-of-selection.
+START-OF-SELECTION.
 
   lcl_cds_me=>main(  ).

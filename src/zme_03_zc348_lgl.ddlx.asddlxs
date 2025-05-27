@@ -1,0 +1,12 @@
+@Metadata.layer: #CORE
+annotate entity Z27_ZC348_LGL with
+  parameters
+    @EndUserText.label: 'City From'
+    pCityFrom
+{
+  @EndUserText.label: 'City From'
+  Cityfrom;
+
+  @EndUserText.label: 'City To'
+  Cityto;
+}

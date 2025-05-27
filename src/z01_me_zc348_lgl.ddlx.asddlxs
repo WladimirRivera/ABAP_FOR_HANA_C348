@@ -1,0 +1,18 @@
+@Metadata.layer: #INDUSTRY
+// 1. #CUSTOMER
+// 2. #PARTNER
+// 3. #INDUSTRY
+// 4. #LOCALIZATION
+// 5. #CORE
+annotate entity Z26_ZC348_LGL
+    with 
+{
+    @UI.dataPoint.description: 'MDE - INDUSTRY / Description / Carrid'
+    @UI.dataPoint.title: 'MDE - INDUSTRY / Title / Carrid'
+    Carrid;
+    
+    @UI.dataPoint.description: 'MDE - INDUSTRY / Description / Connidd'
+    @UI.dataPoint.title: 'MDE - INDUSTRY / Title / Connid'
+    Connid;
+    
+}
